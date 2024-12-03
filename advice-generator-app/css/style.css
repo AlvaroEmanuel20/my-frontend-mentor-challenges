@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    font-family: 'Manrope', sans-serif;
+}
+
+:root {
+    --light-cyan: hsl(193, 38%, 86%);
+    --neon-green: hsl(150, 100%, 66%);
+    --grayish-blue: hsl(217, 19%, 38%);
+    --dark-grayish-blue: hsl(217, 19%, 24%);
+    --dark-blue: hsl(218, 23%, 16%);
+    --font-size-quote: 1.75rem;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--dark-blue);
+    -webkit-display: flex;
+    display: flex;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+main {
+    background-color: var(--dark-grayish-blue);
+    padding: 1.8rem 1.8rem 0 1.8rem;
+    -webkit-display: flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    text-align: center;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    border-radius: 1rem;
+    -webkit-box-shadow: 0 10px 42px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 10px 42px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 42px rgba(0, 0, 0, 0.25);
+}
+
+h2 {
+    color: var(--neon-green);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+h1 {
+    margin: 1.5rem 0 2rem 0;
+    color: var(--light-cyan);
+    font-size: var(--font-size-quote);
+    max-width: 28rem;
+}
+
+@media (max-width: 33.75rem) {
+    h1 {
+        max-width: 18rem;
+    }
+}
+
+#mobile-divider {
+    display: none;
+}
+
+@media (max-width: 33.75rem) {
+    #desktop-divider {
+        display: none;
+    }
+
+    #mobile-divider {
+        display: block;
+    }
+}
+
+.dice {
+    margin-top: 2.5rem;
+    margin-bottom: -1.5rem;
+    background-color: var(--neon-green);
+    padding: 1.2rem;
+    border-radius: 100%;
+    -webkit-display: flex;
+    display: flex;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dice:hover {
+    transition: all 0.3s;
+    -webkit-box-shadow: 0 0 35px var(--neon-green);
+    -moz-box-shadow: 0 0 35px var(--neon-green);
+    box-shadow: 0 0 35px var(--neon-green);
+}
+
+.dice img {
+    width: 1.25rem;
+}

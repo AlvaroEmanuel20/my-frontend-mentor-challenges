@@ -1,0 +1,213 @@
+@import "colors/colors.scss";
+@import "fonts/fonts.scss";
+
+//STRUCTURE AND PATTERNS
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    outline: none;
+    font-family: $font;
+}
+
+@mixin flexbox($display, $justify, $align, $direction) {
+    -webkit-display: $display;
+    display: $display;
+    -webkit-justify-content: $justify;
+    -moz-justify-content: $justify;
+    justify-content: $justify;
+    -webkit-align-items: $align;
+    align-items: $align;
+    -webkit-flex-direction: $direction;
+    -moz-flex-direction: $direction;
+    flex-direction: $direction;
+}
+
+@mixin border-radius($value) {
+    -webkit-border-radius: $value;
+    -moz-border-radius: $value;
+    border-radius: $value;
+}
+
+@mixin circle-back() {
+    padding: 25px;
+    background-color: $back-star;
+    @include border-radius(100px);
+    max-width: 40px;
+    max-height: 40px;
+}
+
+@mixin box-shadow() {
+    -webkit-box-shadow: 0 22px 40px rgba($color: #000000, $alpha: 0.1);
+    -moz-box-shadow: 0 22px 40px rgba($color: #000000, $alpha: 0.1);
+    box-shadow: 0 22px 40px rgba($color: #000000, $alpha: 0.1);
+}
+
+body {
+    font-size: $font-size-default;
+    background: $very-dark-blue;
+    min-height: 100vh;
+    @include flexbox(flex, center, center, column);
+}
+
+main .container {
+    @include flexbox(flex, center, initial, column);
+    background-color: $dark-blue;
+    padding: 30px;
+    @include border-radius(20px);
+
+    @media (max-width: 425px) {
+        padding: 20px;
+    }
+
+    @media (max-width: 410px) {
+        max-width: 320px;
+    }
+
+    @media (max-width: 356px) {
+        max-width: 300px;
+    }
+}
+
+.star {
+    @include circle-back();
+    @include flexbox(flex, center, center, initial);
+    @include box-shadow();
+}
+
+.container {
+    h1 {
+        color: $white;
+        margin: 30px 0 10px 0;
+    }
+
+    p {
+        max-width: 340px;
+        color: $medium-grey;
+        font-weight: $bold;
+        line-height: 140%;
+    }
+}
+
+.ratings {
+    @include flexbox(flex, space-between, center, row);
+    margin: 30px 0;
+}
+
+.rating-circle {
+    color: $medium-grey;
+    font-weight: $bold;
+    @include circle-back();
+    @include flexbox(flex, center, center, initial);
+    cursor: pointer;
+    @include box-shadow();
+
+    &:hover {
+        transition: all 0.3s;
+        color: $white;
+        background-color: $orange;
+    }
+
+    @media (max-width: 356px) {
+        padding: 22px;
+        max-width: 30px;
+        max-height: 30px;
+    }
+}
+
+.rating-active {
+    color: $white;
+    font-weight: $bold;
+    @include circle-back();
+    background-color: $orange;
+    @include flexbox(flex, center, center, initial);
+    @include box-shadow();
+
+    @media (max-width: 356px) {
+        padding: 22px;
+        max-width: 30px;
+        max-height: 30px;
+    }
+}
+
+button {
+    padding: 12px 0;
+    cursor: pointer;
+    @include border-radius(20px);
+    background-color: $orange;
+    color: $white;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    font-weight: $bold;
+    letter-spacing: 0.2em;
+    @include box-shadow();
+
+    &:hover {
+        transition: all 0.3s;
+        background-color: $white;
+        color: $orange;
+    }
+}
+
+#thank-you {
+    text-align: center;
+
+    img {
+        max-width: 45%;
+        margin-bottom: 30px;
+    }
+
+    .container {
+        @include flexbox(flex, center, center, column);
+    }
+
+    h5 {
+        background-color: $back-star;
+        color: $orange;
+        padding: 6px 25px;
+        @include border-radius(20px);
+    }
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.disabled {
+    transition: all 0.3s;
+    color: $medium-grey;
+    font-weight: $bold;
+    @include circle-back();
+    background-color: $light-grey;
+    @include flexbox(flex, center, center, initial);
+    cursor: initial;
+    @include box-shadow();
+
+    @media (max-width: 356px) {
+        padding: 22px;
+        max-width: 30px;
+        max-height: 30px;
+    }
+}
+
+.attribution {
+    position: absolute;
+    bottom: 20px;
+    color: $dark-blue;
+
+    a {
+        text-decoration: none;
+        color: $medium-grey;
+    }
+
+    @media (max-width: 410px) {
+        max-width: 300px;
+    }
+}
+//STRUCTURE AND PATTERNS

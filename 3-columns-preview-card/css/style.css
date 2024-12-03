@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    outline: none;
+}
+
+:root {
+    --font-lexend: 'Lexend Deca', sans-serif;
+    --font-shoulders: 'Big Shoulders Display', cursive;
+    font-size: 0.94rem;
+    --weight-lexend: 400;
+    --weight-shoulders: 700;
+
+    /*Primary colors*/
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
+
+    /*Neutral colors*/
+    --transparent-white-paragraphs: hsla(0, 0%, 100%, 0.75);
+    --very-light-gray-others: hsl(0, 0%, 95%);
+}
+
+body {
+    background-color: var(--very-light-gray-others);
+    -webkit-display: flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem 0;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+    max-width: 18rem;
+    padding: 3rem;
+}
+
+.card:nth-child(1) {
+    background-color: var(--bright-orange);
+    -webkit-border-radius: 0.5rem 0 0 0.5rem;
+    -moz-border-radius: 0.5rem 0 0 0.5rem;
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.card:nth-child(2) {
+    background-color: var(--dark-cyan);
+}
+
+.card:nth-child(3) {
+    background-color: var(--very-dark-cyan);
+    -webkit-border-radius: 0 0.5rem 0.5rem 0;
+    -moz-border-radius: 0 0.5rem 0.5rem 0;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.card img {
+    max-width: 3.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.card h2 {
+    margin-bottom: 1.2rem;
+    font-family: var(--font-shoulders);
+    text-transform: uppercase;
+    color: var(--very-light-gray-others);
+    font-size: 2rem;
+    font-weight: var(--weight-shoulders);
+}
+
+.card p {
+    margin-bottom: 5rem;
+    color: var(--transparent-white-paragraphs);
+    font-family: var(--font-lexend);
+    font-size: 0.85rem;
+    line-height: 1.4rem;
+    font-weight: var(--weight-lexend);
+}
+
+.card button {
+    padding: 0.8rem 1.8rem;
+    text-transform: capitalize;
+    background-color: var(--very-light-gray-others);
+    font-weight: var(--weight-lexend);
+    font-family: var(--font-lexend);
+    -webkit-border-radius: 2.2rem;
+    -moz-border-radius: 2.2rem;
+    border-radius: 2.2rem;
+    cursor: pointer;
+}
+
+.card:nth-child(1) button {
+    color: var(--bright-orange);
+}
+
+.card:nth-child(2) button {
+    color: var(--dark-cyan);
+}
+
+.card:nth-child(3) button {
+    color: var(--very-dark-cyan);
+}
+
+.card button:hover {
+    background: 0;
+    transition: background-color 0.3s;
+    padding: 0.6rem 1.6rem;
+    border: 3px solid var(--very-light-gray-others);
+    color: var(--very-light-gray-others);
+}
+
+.attribution {
+    margin-top: 1.2rem;
+    font-family: var(--font-lexend);
+    font-size: 0.8rem;
+}
+
+.attribution a {
+    text-decoration: none;
+    color: var(--bright-orange);
+}
+
+@media (max-width: 870px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card:nth-child(1) {
+        -webkit-border-radius: 0.5rem 0 0 0;
+        -moz-border-radius: 0.5rem 0 0 0;
+        border-radius: 0.5rem 0 0 0;
+    }
+    
+    .card:nth-child(2) {
+        -webkit-border-radius: 0 0.5rem 0.5rem 0;
+        -moz-border-radius: 0 0.5rem 0.5rem 0;
+        border-radius: 0 0.5rem 0.5rem 0;
+    }
+    
+    .card:nth-child(3) {
+        -webkit-border-radius: 0 0 0.5rem 0.5rem;
+        -moz-border-radius: 0 0 0.5rem 0.5rem;
+        border-radius: 0 0 0.5rem 0.5rem;
+    }
+}
+
+@media (max-width: 590px) {
+    main {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .card:nth-child(1) {
+        -webkit-border-radius: 0.5rem 0.5rem 0 0;
+        -moz-border-radius: 0.5rem 0.5rem 0 0;
+        border-radius: 0.5rem 0.5rem 0 0;
+    }
+    
+    .card:nth-child(2) {
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+    }
+    
+    .card:nth-child(3) {
+        -webkit-border-radius: 0 0 0.5rem 0.5rem;
+        -moz-border-radius: 0 0 0.5rem 0.5rem;
+        border-radius: 0 0 0.5rem 0.5rem;
+    }
+}

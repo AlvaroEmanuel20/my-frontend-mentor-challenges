@@ -1,0 +1,34 @@
+@use "../colors" as c;
+@use "../mixins" as m;
+
+#form {
+  .tab {
+    .title {
+      margin-bottom: 40px;
+      @include m.flex($dir: column, $gap: 8px);
+
+      h1 {
+        color: c.$marine-blue;
+        margin: 0;
+      }
+
+      p {
+        color: c.$cool-gray;
+      }
+
+      @media (max-width: 500px) {
+        margin-bottom: 25px;
+        gap: 12px;
+
+        h1 {
+          font-size: 22px;
+        }
+
+        p {
+          font-size: 15px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}

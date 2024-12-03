@@ -1,0 +1,79 @@
+@use "../colors" as c;
+@use "../mixins" as m;
+
+#form {
+  .tab {
+    &:nth-child(2) {
+      .plan-switch {
+        margin-top: 30px;
+        padding: 15px;
+        @include m.flex(center, center, 20px);
+        background-color: c.$alabaster;
+        @include m.rounded(6px);
+
+        p {
+          font-size: 15px;
+          font-weight: 500;
+          color: c.$cool-gray;
+
+          &.active {
+            color: c.$marine-blue;
+          }
+        }
+
+        .switch {
+          position: relative;
+          display: inline-block;
+          width: 38px;
+          height: 20px;
+
+          input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+          }
+
+          .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: c.$marine-blue;
+            -webkit-transition: 0.25s;
+            transition: 0.25s;
+            @include m.rounded(34px);
+
+            &::before {
+              position: absolute;
+              content: "";
+              height: 12px;
+              width: 12px;
+              left: 4px;
+              bottom: 4px;
+              @include m.rounded(50%);
+              background-color: white;
+              -webkit-transition: 0.25s;
+              transition: 0.25s;
+            }
+          }
+
+          input:checked + .slider {
+            background-color: c.$marine-blue;
+          }
+
+          input:focus + .slider {
+            box-shadow: 0 0 1px c.$marine-blue;
+          }
+
+          input:checked + .slider:before {
+            -webkit-transform: translateX(18px);
+            -ms-transform: translateX(18px);
+            transform: translateX(18px);
+          }
+        }
+      }
+    }
+  }
+}

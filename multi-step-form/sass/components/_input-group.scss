@@ -1,0 +1,45 @@
+@use "../colors" as c;
+@use "../mixins" as m;
+
+.personal-form {
+  .input-group {
+    @include m.flex($dir: column, $gap: 8px);
+
+    .label-group {
+      @include m.flex(space-between, center, $gap: 5px);
+
+      label {
+        font-size: 14px;
+        color: c.$marine-blue;
+      }
+
+      .error {
+        color: c.$strawberry-red;
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+
+    input {
+      border: 1px solid c.$light-gray;
+      outline: none;
+      padding: 14px 15px;
+      @include m.rounded(8px);
+      color: c.$marine-blue;
+
+      &:focus {
+        border-color: c.$purplish-blue;
+        transition-duration: 300ms;
+      }
+
+      &::placeholder {
+        color: c.$cool-gray;
+        font-weight: 500;
+      }
+
+      &:invalid {
+        border-color: c.$strawberry-red;
+      }
+    }
+  }
+}

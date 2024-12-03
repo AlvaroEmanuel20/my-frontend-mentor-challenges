@@ -1,0 +1,274 @@
+@use "colors" as c;
+@use "typography" as t;
+@use "mixins" as m;
+
+@use "components/button";
+@use "components/sidebar";
+@use "components/input-group";
+@use "components/switch";
+@use "components/title";
+@use "components/plan-card";
+@use "components/addon-card";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: ubuntu, sans-serif;
+  background-color: c.$bg;
+  height: 100vh;
+  @include m.flex(center, center);
+
+  @media (max-width: 850px) {
+    display: block;
+  }
+}
+
+.tab,
+#nextBtn,
+#backBtn,
+#confirmBtn {
+  display: none;
+}
+
+main.container {
+  background-color: c.$white;
+  display: grid;
+  grid-template-columns: 274px 1fr;
+  padding: 16px 0 16px 16px;
+  width: 948px;
+  @include m.rounded(15px);
+
+  .tabs-actions {
+    display: none;
+  }
+
+  @media (max-width: 1000px) {
+    margin: 0 16px;
+    width: 100%;
+  }
+
+  @media (max-width: 850px) {
+    background-color: transparent;
+    grid-template-columns: 1fr;
+    padding: 0;
+    margin: 0;
+
+    .tabs-actions {
+      @include m.flex(space-between, center, 20px);
+      margin: 40px 0 20px 0;
+      padding: 0 16px;
+    }
+  }
+}
+
+/*FORM*/
+form#form {
+  padding: 40px 100px 16px 100px;
+  @include m.flex(space-between, $dir: column);
+
+  @media (max-width: 1000px) {
+    padding: 40px 40px 16px 40px;
+  }
+
+  @media (max-width: 850px) {
+    background-color: c.$white;
+    padding: 40px 25px;
+    @include m.rounded(15px);
+    margin: -64px 16px 0 16px;
+  }
+
+  .tabs-actions {
+    @include m.flex(space-between, center, 20px);
+
+    @media (max-width: 850px) {
+      display: none;
+    }
+  }
+
+  .tab {
+    .personal-form {
+      @include m.flex($dir: column, $gap: 20px);
+    }
+
+    &:nth-child(2) {
+      .plans {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+
+        @media (max-width: 570px) {
+          grid-template-columns: 1fr;
+          gap: 15px;
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      .addons {
+        @include m.flex($dir: column, $gap: 20px);
+      }
+    }
+
+    &:nth-child(4) {
+      .total {
+        @include m.flex($dir: column, $gap: 30px);
+
+        @media (max-width: 500px) {
+          gap: 20px;
+        }
+
+        &-details {
+          background-color: c.$alabaster;
+          padding: 20px 25px;
+          @include m.rounded(8px);
+
+          @media (max-width: 500px) {
+            padding: 20px 15px;
+          }
+
+          .total-plan {
+            @include m.flex(space-between, center, 10px);
+
+            div {
+              @include m.flex($dir: column, $gap: 6px);
+
+              h2 {
+                color: c.$marine-blue;
+                font-size: 16px;
+              }
+
+              p {
+                font-size: 15px;
+                color: c.$cool-gray;
+                text-decoration: underline;
+                cursor: pointer;
+
+                &:hover {
+                  color: c.$purplish-blue;
+                  transition-duration: 300ms;
+                }
+              }
+            }
+
+            span {
+              font-weight: bold;
+              color: c.$marine-blue;
+            }
+
+            @media (max-width: 500px) {
+              div {
+                h2 {
+                  font-size: 15px;
+                }
+              }
+            }
+          }
+
+          hr {
+            border-top: 1px solid c.$magnolia;
+            margin: 20px 0;
+          }
+
+          ul.total-addons {
+            list-style: none;
+            @include m.flex($dir: column, $gap: 20px);
+
+            @media (max-width: 500px) {
+              gap: 15px;
+            }
+
+            li {
+              &:nth-child(3) {
+                display: none;
+              }
+
+              div {
+                @include m.flex(space-between, center, 10px);
+
+                p,
+                span {
+                  font-size: 15px;
+                }
+
+                p {
+                  color: c.$cool-gray;
+                }
+
+                span {
+                  color: c.$marine-blue;
+                }
+              }
+            }
+          }
+        }
+
+        &-price {
+          @include m.flex(space-between, center, 10px);
+          padding: 0 25px;
+
+          p {
+            color: c.$cool-gray;
+            font-size: 15px;
+            font-weight: 500;
+          }
+
+          span {
+            color: c.$purplish-blue;
+            font-weight: bold;
+            font-size: 20px;
+          }
+
+          @media (max-width: 500px) {
+            padding: 0 15px;
+
+            p {
+              font-size: 14px;
+            }
+
+            span {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+
+    &:nth-child(5) {
+      div {
+        @include m.flex(center, center, 0, column);
+        text-align: center;
+
+        h1 {
+          margin: 30px 0 20px 0;
+          color: c.$marine-blue;
+        }
+
+        p {
+          color: c.$cool-gray;
+          line-height: 1.5rem;
+        }
+      }
+
+      @media (max-width: 500px) {
+        padding: 30px 0;
+
+        img {
+          width: 70px;
+        }
+
+        h1 {
+          font-size: 25px;
+        }
+
+        p {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+/*FORM*/

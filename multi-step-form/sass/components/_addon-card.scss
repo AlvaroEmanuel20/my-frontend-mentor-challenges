@@ -1,0 +1,91 @@
+@use "../colors" as c;
+@use "../mixins" as m;
+
+#form {
+  .tab {
+    &:nth-child(3) {
+      .addon {
+        border: 1px solid c.$light-gray;
+        @include m.rounded(8px);
+        padding: 20px 25px;
+        @include m.flex(space-between, center, 10px);
+        cursor: pointer;
+
+        @media (max-width: 500px) {
+          padding: 12px;
+        }
+
+        &.selected {
+          border-color: c.$purplish-blue;
+          background-color: c.$alabaster;
+
+          span.addon-checkbox {
+            background-color: c.$purplish-blue;
+
+            img {
+              display: block;
+            }
+          }
+        }
+
+        &:hover {
+          border-color: c.$purplish-blue;
+          transition-duration: 300ms;
+        }
+
+        &-description {
+          @include m.flex($items: center, $gap: 20px);
+
+          @media (max-width: 500px) {
+            gap: 15px;
+          }
+
+          span.addon-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 1px solid c.$light-gray;
+            @include m.rounded(5px);
+            @include m.flex(center, center);
+
+            img {
+              display: none;
+            }
+          }
+
+          div {
+            @include m.flex($dir: column, $gap: 6px);
+
+            h4 {
+              color: c.$marine-blue;
+              font-weight: 500;
+            }
+
+            p {
+              font-size: 15px;
+              color: c.$cool-gray;
+              font-weight: 500;
+            }
+
+            @media (max-width: 500px) {
+              gap: 4px;
+
+              h4 {
+                font-size: 14px;
+              }
+
+              p {
+                font-size: 12px;
+                font-weight: normal;
+              }
+            }
+          }
+        }
+
+        &-price {
+          font-size: 14px;
+          color: c.$purplish-blue;
+        }
+      }
+    }
+  }
+}

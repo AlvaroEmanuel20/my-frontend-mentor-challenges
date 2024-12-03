@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    font-family: 'Outfit', sans-serif;
+}
+
+:root {
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --very-dark-blue-main-bg: hsl(217, 54%, 11%);
+    --very-dark-blue-card-bg: hsl(216, 50%, 16%);
+    --very-dark-blue-line: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+    --font-weight-bold: 600;
+    --font-weight-middle: 400;
+    --font-weight-regular: 300;
+    --font-size-p: 18px;
+}
+
+body {
+    height: 100vh;
+    background: var(--very-dark-blue-main-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    margin-top: 50px;
+    background: var(--very-dark-blue-card-bg);
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    height: 500px;
+    box-shadow: 3px 8px 35px -9px rgba(0,0,0,0.51);
+    -webkit-box-shadow: 3px 8px 35px -9px rgba(0,0,0,0.51);
+    -moz-box-shadow: 3px 8px 35px -9px rgba(0,0,0,0.51);
+}
+
+main img {
+    width: 100%;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#principal-content h1 {
+    padding-top: 15px;
+    font-size: 1.2rem;
+    color: var(--white);
+    font-weight: var(--font-weight-bold);
+}
+
+#principal-content p {
+    padding-top: 15px;
+    font-size: 15px;
+    color: var(--soft-blue);
+}
+
+#extra-info {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.item-info {
+    display: flex;
+}
+
+.item-info img {
+    width: auto;
+}
+
+.item-info p {
+    font-size: 15px;
+    color: var(--cyan);
+    padding-left: 8px;
+}
+
+#clock-text {
+    color: var(--soft-blue);
+}
+
+#line {
+    margin: 20px 0 15px 0;
+    border-top: 1px solid hsl(215, 32%, 27%);
+}
+
+#creator {
+    display: flex;
+    align-items: center;
+}
+
+#creator p {
+    color: var(--soft-blue);
+    font-size: 13px;
+    padding-left: 12px;
+}
+
+#creator #name {
+    color: var(--white);
+}
+
+#creator img {
+    width: 30px;
+    border: 1px solid white;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+}
+
+.attribution {
+    color: var(--very-dark-blue-card-bg);
+    text-align: center;
+    padding-top: 80px;
+    width: 250px;
+}
+
+.attribution a {
+    text-decoration: none;
+    color: var(--white);
+}

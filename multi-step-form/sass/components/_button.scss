@@ -1,0 +1,45 @@
+@use "../colors" as c;
+@use "../mixins" as m;
+
+button {
+  cursor: pointer;
+  border: 0;
+  background-color: c.$marine-blue;
+  padding: 14px 22px;
+  color: c.$white;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  @include m.rounded(8px);
+
+  &:hover {
+    background-color: c.$purplish-blue;
+    transition-duration: 300ms;
+  }
+
+  &.back-btn,
+  &.next-btn,
+  &.confirm-btn {
+    display: none;
+  }
+
+  &.back-btn {
+    background-color: transparent;
+    padding: 0;
+    color: c.$cool-gray;
+
+    &:hover {
+      color: c.$marine-blue;
+      transition-duration: 300ms;
+    }
+  }
+
+  &.confirm-btn {
+    background-color: c.$purplish-blue;
+
+    &:hover {
+      background-color: c.$pastel-blue;
+      transition-duration: 300ms;
+    }
+  }
+}
